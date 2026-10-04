@@ -89,14 +89,27 @@ public class SistemaEscolaEAD {
                         }
                     }
 
-                    System.out.print("Aluno bolsista? (S/N): ");
-                    String resp = teclado.nextLine();
+                    if(cursoEscolhido == null) {
+
+                        System.out.println(
+                        "Curso inválido!");
+
+                        break;
+                    }
+
+                    System.out.print(
+                    "Aluno bolsista? (S/N): ");
+
+                    String resp =
+                    teclado.nextLine();
 
                     Aluno aluno;
 
                     if(resp.equalsIgnoreCase("S")) {
 
-                        System.out.print("Tipo da bolsa: ");
+                        System.out.print(
+                        "Tipo da bolsa: ");
+
                         String tipoBolsa =
                         teclado.nextLine();
 
@@ -122,18 +135,28 @@ public class SistemaEscolaEAD {
                         cursoEscolhido);
                     }
 
-                    System.out.println("\nDigite as 3 notas:");
+                    System.out.println(
+                    "\nDigite as 3 notas:");
 
-                    double n1 = teclado.nextDouble();
-                    double n2 = teclado.nextDouble();
-                    double n3 = teclado.nextDouble();
+                    double n1 =
+                    teclado.nextDouble();
 
-                    aluno.lancarNotas(n1, n2, n3);
+                    double n2 =
+                    teclado.nextDouble();
+
+                    double n3 =
+                    teclado.nextDouble();
+
+                    teclado.nextLine();
+
+                    aluno.lancarNotas(
+                    n1, n2, n3);
 
                     double[] parcelas =
-                    {250,250,250,250,250,250};
+                    {250, 250, 250, 250, 250, 250};
 
-                    aluno.adicionarMensalidades(parcelas);
+                    aluno.adicionarMensalidades(
+                    parcelas);
 
                     if(lista.adicionarAluno(aluno)) {
 
@@ -180,11 +203,13 @@ public class SistemaEscolaEAD {
                     teclado.nextInt();
 
                     Aluno alunoFinanceiro =
-                    lista.buscarAluno(codFinanceiro);
+                    lista.buscarAluno(
+                    codFinanceiro);
 
                     if(alunoFinanceiro != null) {
 
-                        alunoFinanceiro.exibirMensalidades();
+                        alunoFinanceiro
+                        .exibirMensalidades();
 
                         System.out.print(
                         "Digite a parcela para pagar (1 a 6): ");
@@ -192,7 +217,8 @@ public class SistemaEscolaEAD {
                         int parcela =
                         teclado.nextInt();
 
-                        alunoFinanceiro.pagarMensalidade(
+                        alunoFinanceiro
+                        .pagarMensalidade(
                         parcela - 1);
 
                         System.out.println(

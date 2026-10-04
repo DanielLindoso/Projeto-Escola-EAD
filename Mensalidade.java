@@ -1,4 +1,5 @@
 public class Mensalidade {
+
     private double valor;
     private boolean pago;
 

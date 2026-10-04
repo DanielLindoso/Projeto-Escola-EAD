@@ -1,14 +1,17 @@
 public class Curso {
+
     private int codigo;
     private String nome;
     private int duracao;
 
+    // Construtor
     public Curso(int codigo, String nome, int duracao) {
         this.codigo = codigo;
         this.nome = nome;
         this.duracao = duracao;
     }
 
+    // Getter e Setter de codigo
     public int getCodigo() {
         return codigo;
     }
@@ -17,6 +20,7 @@ public class Curso {
         this.codigo = codigo;
     }
 
+    // Getter e Setter de nome
     public String getNome() {
         return nome;
     }
@@ -25,6 +29,7 @@ public class Curso {
         this.nome = nome;
     }
 
+    // Getter e Setter de duracao
     public int getDuracao() {
         return duracao;
     }
@@ -33,7 +38,9 @@ public class Curso {
         this.duracao = duracao;
     }
 
+    // Exibe os dados do curso
     public void exibeDados() {
+        System.out.println("===== DADOS DO CURSO =====");
         System.out.println("Código: " + codigo);
         System.out.println("Nome: " + nome);
         System.out.println("Duração: " + duracao + " horas");

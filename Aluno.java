@@ -14,7 +14,8 @@ public class Aluno {
     private Mensalidade[] mensalidades;
     private int numParcelas;
 
-    public Aluno(int codigo, String nome,
+    public Aluno(int codigo,
+                 String nome,
                  String dataNascimento,
                  String email,
                  String senha,
@@ -32,10 +33,6 @@ public class Aluno {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -45,14 +42,17 @@ public class Aluno {
     }
 
     public void exibeDados() {
+
         System.out.println("------------------");
         System.out.println("Código: " + codigo);
         System.out.println("Nome: " + nome);
-        System.out.println("Nascimento: " + dataNascimento);
+        System.out.println("Data de nascimento: " + dataNascimento);
         System.out.println("Email: " + email);
 
         if(cursoMatriculado != null) {
-            System.out.println("Curso: " + cursoMatriculado.getNome());
+            System.out.println(
+            "Curso: "
+            + cursoMatriculado.getNome());
         }
     }
 
@@ -70,7 +70,10 @@ public class Aluno {
     }
 
     public double calcularMedia() {
-        return (notas[0] + notas[1] + notas[2]) / 3;
+
+        return (notas[0]
+               + notas[1]
+               + notas[2]) / 3;
     }
 
     public void exibirNotas() {
@@ -78,25 +81,42 @@ public class Aluno {
         System.out.println("Notas:");
 
         for(int i = 0; i < notas.length; i++) {
-            System.out.println("Nota " + (i + 1) + ": " + notas[i]);
+
+            System.out.println(
+            "Nota "
+            + (i + 1)
+            + ": "
+            + notas[i]);
         }
 
-        System.out.printf("Média: %.2f%n", calcularMedia());
+        System.out.printf(
+        "Média: %.2f%n",
+        calcularMedia());
     }
 
-    public void adicionarMensalidades(double[] valores) {
+    public void adicionarMensalidades(
+    double[] valores) {
 
         numParcelas = valores.length;
-        mensalidades = new Mensalidade[numParcelas];
 
-        for(int i = 0; i < valores.length; i++) {
-            mensalidades[i] = new Mensalidade(valores[i]);
+        mensalidades =
+        new Mensalidade[numParcelas];
+
+        for(int i = 0;
+            i < valores.length;
+            i++) {
+
+            mensalidades[i] =
+            new Mensalidade(
+            valores[i]);
         }
     }
 
     public void exibirMensalidades() {
 
-        for(int i = 0; i < mensalidades.length; i++) {
+        for(int i = 0;
+            i < mensalidades.length;
+            i++) {
 
             String status;
 
@@ -107,16 +127,23 @@ public class Aluno {
             }
 
             System.out.println(
-            "Parcela " + (i + 1)
-            + " - R$ " + mensalidades[i].getValor()
-            + " - " + status);
+            "Parcela "
+            + (i + 1)
+            + " - R$ "
+            + mensalidades[i].getValor()
+            + " - "
+            + status);
         }
     }
 
-    public void pagarMensalidade(int indice) {
+    public void pagarMensalidade(
+    int indice) {
 
-        if(indice >= 0 && indice < mensalidades.length) {
-            mensalidades[indice].darBaixa();
+        if(indice >= 0 &&
+           indice < mensalidades.length) {
+
+            mensalidades[indice]
+            .darBaixa();
         }
     }
 }
